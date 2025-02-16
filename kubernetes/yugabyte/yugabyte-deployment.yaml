@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: yugabyte
+spec:
+  serviceName: "yugabyte"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: yugabyte
+  template:
+    metadata:
+      labels:
+        app: yugabyte
+    spec:
+      containers:
+        - name: yugabyte
+          image: yugabytedb/yugabyte:latest
+          ports:
+            - containerPort: 5433
+              name: ycql
+            - containerPort: 9042
+              name: ysql
+          volumeMounts:
+            - mountPath: /var/lib/yugabyte
+              name: yugabyte-storage
+  volumeClaimTemplates:
+    - metadata:
+        name: yugabyte-storage
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 1Gi
