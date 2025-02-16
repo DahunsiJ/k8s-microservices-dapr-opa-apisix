@@ -7,6 +7,6 @@ spec:
     app: service-2
   ports:
     - protocol: TCP
-      port: 4001
-      targetPort: 4001
+      port: 4400
+      targetPort: 4400
   type: LoadBalancer

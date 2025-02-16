@@ -1,0 +1,41 @@
+apiVersion: apisix.apache.org/v2beta3
+kind: ApisixRoute
+metadata:
+  name: apisix-routes
+  namespace: default
+spec:
+  http:
+    - name: service-1-route
+      match:
+        hosts:
+          - service-1.local
+        paths:
+          - /service-1/*
+      backends:
+        - serviceName: service-1
+          servicePort: 4000
+      plugins:
+        - name: cors
+          enable: true
+        - name: rate-limit
+          enable: true
+          config:
+            rate: 10
+            burst: 5
+    - name: service-2-route
+      match:
+        hosts:
+          - service-2.local
+        paths:
+          - /service-2/*
+      backends:
+        - serviceName: service-2
+          servicePort: 4400
+      plugins:
+        - name: cors
+          enable: true
+        - name: authz-keycloak
+          enable: true
+          config:
+            discovery: "http://keycloak.local/auth/realms/myrealm"
+            token_header: "Authorization"

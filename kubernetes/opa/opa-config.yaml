@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: opa-config
+  namespace: default
+data:
+  config.yaml: |
+    services:
+      - name: policy-service
+        url: http://opa:8181
+    decision_logs:
+      service: policy-service
+      reporting:
+        min_delay_seconds: 10
+        max_delay_seconds: 60
+    plugins:
+      envoy_ext_authz_grpc:
+        addr: :9191
+        query: "data.authz.allow"
+    bundle:
+      name: authz-policy
+      service: policy-service
+      resource: bundles/authz-policy.tar.gz
+      polling:
+        min_delay_seconds: 10
+        max_delay_seconds: 60
+    status:
+      service: policy-service

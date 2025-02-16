@@ -21,4 +21,4 @@ spec:
           - /service-2/*
       backends:
         - serviceName: service-2
-          servicePort: 4001
+          servicePort: 4400
