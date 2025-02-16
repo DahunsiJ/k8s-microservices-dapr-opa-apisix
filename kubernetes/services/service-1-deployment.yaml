@@ -15,7 +15,8 @@ spec:
     spec:
       containers:
         - name: service-1
-          image: dahunsij/service-1:latest
+          image: service-1:latest
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 4000
           env:
