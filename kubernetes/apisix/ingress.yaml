@@ -1,0 +1,24 @@
+apiVersion: apisix.apache.org/v2beta3
+kind: ApisixRoute
+metadata:
+  name: service-ingress
+spec:
+  http:
+    - name: service-1
+      match:
+        hosts:
+          - service-1.local
+        paths:
+          - /service-1/*
+      backends:
+        - serviceName: service-1
+          servicePort: 4000
+    - name: service-2
+      match:
+        hosts:
+          - service-2.local
+        paths:
+          - /service-2/*
+      backends:
+        - serviceName: service-2
+          servicePort: 4001
