@@ -1,24 +1,30 @@
-apiVersion: apisix.apache.org/v2beta3
-kind: ApisixRoute
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
-  name: service-ingress
+  name: apisix-ingress
+  annotations:
+    kubernetes.io/ingress.class: "apisix"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
-  http:
-    - name: service-1
-      match:
-        hosts:
-          - service-1.local
+  rules:
+    - host: service-1.local
+      http:
         paths:
-          - /service-1/*
-      backends:
-        - serviceName: service-1
-          servicePort: 4000
-    - name: service-2
-      match:
-        hosts:
-          - service-2.local
+          - path: /service-1/(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: service-1
+                port:
+                  number: 4000
+    - host: service-2.local
+      http:
         paths:
-          - /service-2/*
-      backends:
-        - serviceName: service-2
-          servicePort: 4400
+          - path: /service-2/(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: service-2
+                port:
+                  number: 4400

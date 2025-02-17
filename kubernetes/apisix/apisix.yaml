@@ -20,8 +20,16 @@ spec:
         - name: rate-limit
           enable: true
           config:
-            rate: 10
-            burst: 5
+            rate: 5  # Reduced to strengthen security
+            burst: 2
+        - name: openid-connect
+          enable: true
+          config:
+            discovery: "http://keycloak.local/auth/realms/myrealm"
+            token_header: "Authorization"
+            bearer_only: true
+        - name: request-id
+          enable: true
     - name: service-2-route
       match:
         hosts:
@@ -39,3 +47,10 @@ spec:
           config:
             discovery: "http://keycloak.local/auth/realms/myrealm"
             token_header: "Authorization"
+        - name: request-id
+          enable: true
+        - name: rate-limit
+          enable: true
+          config:
+            rate: 5
+            burst: 2
