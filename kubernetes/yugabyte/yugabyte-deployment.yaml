@@ -44,4 +44,9 @@ spec:
         accessModes: ["ReadWriteOnce"]
         resources:
           requests:
-            storage: 1Gi
+            memory: "1Gi"  # Increase from 512Mi
+            cpu: "500m"    # Increase from 250m
+          limits:
+            memory: "2Gi"  # Increase from 1Gi
+            cpu: "1"       # Increase from 500m
+            
