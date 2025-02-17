@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: yugabyte
+  namespace: yugabyte
 spec:
   serviceName: "yugabyte"
   replicas: 1
@@ -26,6 +27,13 @@ spec:
           volumeMounts:
             - mountPath: /var/lib/yugabyte
               name: yugabyte-storage
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
           securityContext:
             runAsUser: 2000
             allowPrivilegeEscalation: false
