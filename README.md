@@ -22,6 +22,7 @@ This project demonstrates a **Kubernetes-based microservices architecture** usin
 ---
 
 ## **📂 Project Folder Structure**
+
 k8s-microservices-dapr-opa-apisix/
 │── microservices/
 │   ├── service-1/
