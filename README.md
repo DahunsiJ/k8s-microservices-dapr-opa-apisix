@@ -22,7 +22,70 @@ This project demonstrates a **Kubernetes-based microservices architecture** usin
 ---
 
 ## **📂 Project Folder Structure**
-k8s-microservices-dapr-opa-apisix/ │── microservices/ │ ├── service-1/ │ │ ├── src/ │ │ │ ├── controllers/ │ │ │ ├── models/ │ │ │ ├── routes/ │ │ │ ├── services/ │ │ ├── config/ │ │ │ ├── db.js │ │ │ ├── kafka.js │ │ │ ├── dapr.js │ │ ├── security/ │ │ │ ├── opa-check.js │ │ │ ├── middleware.js │ │ │ ├── helmet-config.js │ │ │ ├── rate-limit.js │ │ ├── Dockerfile │ │ ├── package.json │ │ ├── .gitignore │ │ ├── README.md │ │ │ ├── service-2/ # Same structure as service-1 │ │── kubernetes/ │ ├── apisix/ │ │ ├── apisix.yaml │ │ ├── ingress.yaml │ │ │ ├── opa/ │ │ ├── policies/ │ │ │ ├── service-access.rego │ │ ├── opa-deployment.yaml │ │ ├── opa-config.yaml │ │ │ ├── dapr/ │ │ ├── components.yaml │ │ │ ├── kafka/ │ │ ├── kafka-deployment.yaml │ │ ├── kafka-topic.yaml │ │ │ ├── yugabyte/ │ │ ├── yugabyte-deployment.yaml │ │ ├── yugabyte-service.yaml │ │ ├── services/ │ │ ├── service-1-deployment.yaml │ │ ├── service-1-service.yaml │ │ ├── service-2-deployment.yaml │ │ ├── service-2-service.yaml │ │ ├── namespace.yaml │ │── security/ │ ├── opa-policies/ │ ├── rbac.yaml │ ├── network-policies.yaml │ │── minikube-setup.sh │── README.md
+k8s-microservices-dapr-opa-apisix/
+│── microservices/
+│   ├── service-1/
+│   │   ├── src/
+│   │   │   ├── controllers/
+│   │   │   ├── models/
+│   │   │   ├── routes/
+│   │   │   ├── services/
+│   │   ├── config/
+│   │   │   ├── db.js
+│   │   │   ├── kafka.js
+│   │   │   ├── dapr.js
+│   │   ├── security/
+│   │   │   ├── opa-check.js
+│   │   │   ├── middleware.js
+│   │   │   ├── helmet-config.js
+│   │   │   ├── rate-limit.js
+│   │   ├── Dockerfile
+│   │   ├── package.json
+│   │   ├── .gitignore
+│   │   ├── README.md
+│   │
+│   ├── service-2/  # Same structure as service-1
+│
+│── kubernetes/
+│   ├── apisix/
+│   │   ├── apisix.yaml
+│   │   ├── ingress.yaml
+│   │
+│   ├── opa/
+│   │   ├── policies/
+│   │   │   ├── service-access.rego
+│   │   ├── opa-deployment.yaml
+│   │   ├── opa-config.yaml
+│   │
+│   ├── dapr/
+│   │   ├── components.yaml
+│   │
+│   ├── kafka/
+│   │   ├── kafka-deployment.yaml
+│   │   ├── kafka-topic.yaml
+│   │
+│   ├── yugabyte/
+│   │   ├── yugabyte-deployment.yaml
+│   │   ├── yugabyte-service.yaml
+│
+│   ├── services/
+│   │   ├── service-1-deployment.yaml
+│   │   ├── service-1-service.yaml
+│   │   ├── service-2-deployment.yaml
+│   │   ├── service-2-service.yaml
+│
+│   ├── namespace.yaml
+│
+│── security/
+│   ├── opa-policies/
+│   ├── rbac.yaml
+│   ├── network-policies.yaml
+│
+│── minikube-setup.sh
+│── README.md
+
+
+
 
 
 ---
