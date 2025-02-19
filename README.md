@@ -155,14 +155,14 @@ kubectl exec -it kafka-0 -- kafka-console-producer --broker-list kafka:9092 --to
 📌 **[📹 Watch the Demo](https://drive.google.com/file/d/1h1Io6Jpn6tVh4A-sGgwl7Do4UCTMf39L/view?usp=sharing)**
 🔗 Watch the Demo
 
-👨‍💻 Contributors
+## **👨‍💻 Contributors**
 Justus Dahunsi
 
-📌 Issues & Future Improvements
+## **📌 Issues & Future Improvements**
 ✅ Current Issue: YugabyteDB is failing due to a distroless image issue.
 💡 Potential Fix: Use PostgreSQL as a fallback storage solution.
 
-📧 Submission Details
+## **📧 Submission Details**
 ✅ GitHub Repo Shared: temmyonfire@gmail.com (added as a collaborator)
 ✅ Demo Video Recorded
 ✅ Email Sent to: admin@upi.dev
