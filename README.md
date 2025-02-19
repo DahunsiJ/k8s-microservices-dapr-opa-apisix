@@ -136,8 +136,8 @@ curl -X GET "http://$(minikube ip):30080/service-1/api/hello"
 ```sh
 
 curl -X POST "http://$(minikube ip):30080/service-1/api/call-service-2"
-Expected: Blocked during restricted hours.
 ```
+Expected: Blocked during restricted hours.
 
 ### **8️⃣ Test Kafka Pub/Sub**
 ```sh
