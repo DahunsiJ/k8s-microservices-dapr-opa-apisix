@@ -151,8 +151,8 @@ kubectl exec -it kafka-0 -- kafka-console-producer --broker-list kafka:9092 --to
 📌 **![Architecture Diagram](./Architecture_Diagram_k8s-microservices-dapr-opa-apisix.drawio.png)**
 
 
-🎥 Demo Video
-📌 (Upload a screen recording to the demo/ folder and provide a link here.)
+## **🎥 Demonstration Video**
+📌 **[📹 Watch the Demo](https://drive.google.com/file/d/1h1Io6Jpn6tVh4A-sGgwl7Do4UCTMf39L/view?usp=sharing)**
 🔗 Watch the Demo
 
 👨‍💻 Contributors
